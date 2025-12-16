@@ -66,8 +66,17 @@ Ele depende do front-end e do banco de dados.
 
 ### Pré-requisitos
 
-- Docker
+- Docker (baixado e iniciado)
 - Docker Compose
+- Clonar o Front do git: https://github.com/RodolphoGLC/MVP-Arquitetura-Front
+- Criar uma pasta em algum lugar no seu computador
+- Você precisa copiar e colar a pasta back na pasta criada, junto aos 2 arquivos do repositório do front a estrutura que deverá ficar está abaixo:
+
+```text
+front/
+back/
+docker-compose.yml
+```
 
 ---
 
@@ -77,6 +86,13 @@ Na **raiz do projeto** (onde está o `docker-compose.yml`), execute:
 
 ```bash
 docker compose up --build
+```
+
+Quando o primeiro comando terminar de rodar, vc vai rodar o comando abaixo
+⚠️ **Este comando precisará que o back esteja rodando no docker.**  
+
+```bash
+docker compose exec backend alembic upgrade head
 ```
 
 Este comando irá:
